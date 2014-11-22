@@ -25,6 +25,7 @@ fn print_str_vec(vec: &[&str]) {
 }
 
 // <T> -> Make function polymorphic over type T
+// <T: std::fmt::Show> -> takes in a type T that impl the Show trait
 fn print_vec<T: std::fmt::Show>(vec: &[T]) {
     for elem in vec.iter() {
         println!("{}", *elem)
