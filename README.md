@@ -1,5 +1,5 @@
-rust_for_rubyists
-=================
+## Rust playground
 
-Attempt at following the Rust for Rubyists guide. Why Rust? It's the polar
-opposite of Ruby.
+Why Rust? It's the polar opposite of Ruby.
+
+Most of these come from the Rust for Rubyists guide by Steve Klabnik.
