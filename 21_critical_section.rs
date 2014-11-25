@@ -14,7 +14,7 @@ fn main() {
     let mut c2 = false;
 
     spawn(proc() {
-        while true {
+        loop {
            c1 = true;
            while c2 {}
            if c2 { println!("Mutual exclusion broken") } // This never gets printed
@@ -24,7 +24,7 @@ fn main() {
     });
 
     spawn(proc() {
-        while true {
+        loop {
            c2 = true;
            while c1 {}
            if c1 { println!("Mutual exclusion broken") } // This never gets printed

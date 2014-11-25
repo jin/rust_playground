@@ -10,7 +10,7 @@ fn main() {
     let mut will_wait = 1u; 
 
     spawn(proc() {
-        while true {
+        loop {
            c1 = true;
            will_wait = 1u;
            while c2 && will_wait == 1 {}
@@ -20,7 +20,7 @@ fn main() {
     });
 
     spawn(proc() {
-        while true {
+        loop {
            c2 = true;
            will_wait = 2u;
            while c1 && will_wait == 2 {}
