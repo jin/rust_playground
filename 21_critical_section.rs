@@ -1,3 +1,14 @@
+use std::io::Timer;
+use std::time::Duration;
+
+/// Called by c2, timing out for 100ms..
+/// Called by c1, timing out for 100ms..
+/// Called by c2, timing out for 100ms..
+/// Called by c1, timing out for 100ms..
+/// Called by c2, timing out for 100ms.. 
+/// Called by c2, timing out for 100ms.. <- Rare, but this has a tiny possibility of leading
+/// towards starvation
+
 fn main() {
     let mut c1 = false;
     let mut c2 = false;
@@ -24,5 +35,7 @@ fn main() {
 }
 
 fn critical_section(caller: String) {
-    println!("Called by {}", caller);
+    println!("Called by {}, timing out for 300ms..", caller);
+    let mut timer = Timer::new().unwrap();
+    timer.sleep(Duration::milliseconds(300));
 }
