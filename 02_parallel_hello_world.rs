@@ -1,6 +1,8 @@
+use std::thread::spawn;
+
 fn main() {
-  for _ in range(0u, 10) {
-    spawn(proc() {
+  for _ in (0u32..10) {
+    spawn(move || {
       let message = "Hello?";
       println!("{}", message);
     });
