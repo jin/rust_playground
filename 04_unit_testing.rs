@@ -1,6 +1,6 @@
 #[test]
 fn failing_test() {
-  fail!("Fail!");
+  panic!("Fail!");
 }
 
 #[test]
